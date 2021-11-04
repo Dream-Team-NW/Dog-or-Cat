@@ -1,13 +1,49 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
     <title>Find your Dream House!</title>
 </head>
 <body>
-    <div id="myMap"></div>
-    <script src="assets/script.js"></script>
+    <div id='printoutPanel'></div>
+        
+    <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+    
+
+    <script src="./assets/script.js"></script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AlHZDmDuCSe95lvt1_Z_p2cMgLplD6bNalBJZKY8M9eEYDsoC0Vm4LBj6sb4L29c' async defer></script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>setviewtostreetsideHTML</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <style type='text/css'>body{margin:0;padding:0;overflow:hidden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
+    </head>
+    <body>
+        <div id='printoutPanel'></div>
+        
+        <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+        <!-- <script type='text/javascript'>
+            function loadMapScenario() {
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                    /* No need to set credentials if already passed in URL */
+                    mapTypeId: Microsoft.Maps.MapTypeId.road,
+                    zoom: 18,
+                    center: new Microsoft.Maps.Location(28.332823, -81.492279)
+                });
+                map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.streetside });
+                
+            }
+        </script> -->
+        
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AlHZDmDuCSe95lvt1_Z_p2cMgLplD6bNalBJZKY8M9eEYDsoC0Vm4LBj6sb4L29c&callback=loadMapScenario'></script>
+        <script src="assets/script.js"></script>
+    </body>
 </html>
