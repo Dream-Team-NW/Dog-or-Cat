@@ -19,15 +19,19 @@
 //         return response.json()
 //     })
     
+
+var inputField = document.querySelector('#zipCode')
+
+
 function fetchData(){
-    var cityState = inputField.value
-    var addressName = inputField.value
+    var zipCode = inputField.value
+    // var addressName = inputFieldAddress.value
     var apiKey = 'X1-ZWz16g8ifrfvnv_4ye7m'
-    var requestUrl = 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=' + apiKey + '&address=' + addressName + '&' + cityState
+    var requestUrl = 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=' + apiKey + '&address=2114+Bigelow+Ave&citystatezip=Seattle%2C+WA'
     fetch(requestUrl)
     .then(function(response) {
         return response.json()
-    })
-    
-    fetchData()
+    })  
 }
+
+fetchData()
