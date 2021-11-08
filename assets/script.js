@@ -123,20 +123,31 @@ function apiGet(query) {
       .then(response => response.json())
       .then(function(data){
         console.log(data)
-        bingSearch(data.lon, data.lat)
+        getAttraction(data.lon, data.lat)
       })
       .catch(function (err) {
         console.log("Fetch Error :-S", err);
       });
   };
-function bingSearch(long, lat){
-  var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
-        mapTypeId: Microsoft.Maps.MapTypeId.road,
-        zoom: 18,
-        center: new Microsoft.Maps.Location(lat, long)
-    });
-    map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.streetside });
-}
+
+function getAttraction(long, lat) {
+  var attractionUrl = "https://api.opentripmap.com/0.1/en/places/radius?radius=10000&lon=" + long + "&lat=" + lat + "&kinds=amusement_parks,sport,water_parks,miniature_parks&format=json&limit=50&apikey=" + opentripKey;
+    fetch(attractionUrl)
+      .then(response => response.json())
+      .then(function(data){
+        console.log(data)
+})};
+
+// function bingSearch(long, lat){
+//   var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+//         mapTypeId: Microsoft.Maps.MapTypeId.road,
+//         zoom: 18,
+//         center: new Microsoft.Maps.Location(lat, long)
+//     });
+//     map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.streetside });
+// }
+
+
 
 document.getElementById("get-info").addEventListener("click", function (event) {
   event.preventDefault();
