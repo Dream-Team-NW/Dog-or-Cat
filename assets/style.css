@@ -1,0 +1,23 @@
+head {
+    display: flex;
+    align-items: center;
+
+}
+
+body {
+    display: flex;
+    align-items: center;
+    background-color: rgb(166, 166, 212);
+    padding: 1px;
+    color: black;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    
+}
