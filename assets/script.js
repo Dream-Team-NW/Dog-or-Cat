@@ -1,4 +1,5 @@
 var inputEl = document.querySelector('#get-info')
+var listEl = document.querySelector("#list");
 inputEl.addEventListener('click', apiGet)
 
 var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
@@ -23,6 +24,39 @@ function getAttraction(long, lat) {
       .then(function(data){
         console.log(data)
         bingSearch(data[1].point.lon, data[1].point.lat)
+        for (i = 0; i < 5; i++) {
+          var attractionXID = data[i].xid;
+          var attractionDescriptionUrl = "https://api.opentripmap.com/0.1/en/places/xid/" + attractionXID + "?apikey=" + opentripKey;
+          fetch(attractionDescriptionUrl)
+            .then(response => response.json())
+            .then(function(data){
+              console.log(data);
+              // append card
+              var attractionCard = document.createElement("div");
+              attractionCard.className += "card darken-1";
+              listEl.appendChild(attractionCard);
+              // append name
+              var attractionCardName = document.createElement("div");
+              attractionCardName.textContent = data.name;
+              attractionCard.appendChild(attractionCardName);
+              // append description
+              var attractionCardDescription = document.createElement("div");
+              attractionCardDescription.textContent = data.wikipedia_extracts.text;
+              attractionCard.appendChild(attractionCardDescription);
+              // append button
+              var attractionCardButton = document.createElement("button");
+              attractionCardButton.className += "waves-effect waves-light btn";
+              attractionCardButton.innerHTML = "Add " + data.name;
+              attractionCard.appendChild(attractionCardButton);
+            })
+          
+          // append card
+          
+
+          
+
+          
+        }
       })
 };
 
