@@ -34,7 +34,7 @@ function bingSearch(long, lat){
     });
     map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.birdseye 
     });
-}
+};
 
 document.getElementById("get-info").addEventListener("click", function (event) {
   event.preventDefault();
@@ -43,3 +43,6 @@ document.getElementById("get-info").addEventListener("click", function (event) {
     console.log(name)
     apiGet(name)
 });
+
+
+
