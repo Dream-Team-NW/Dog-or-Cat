@@ -24,6 +24,13 @@ main {
     
 }
 
+
+.error {
+    color: #ba3939;
+    background: #ffe0e0;
+    border: 1px solid #a33a3a;
+  }
+
 @media (max-width:1025px) {
 
 }
@@ -35,5 +42,4 @@ main {
 @media (max-width:576px) {
     body {
         background-color: #bb8588;
-}
 }
