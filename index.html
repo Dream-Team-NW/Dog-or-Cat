@@ -8,23 +8,30 @@
         <title>Tourism Planner</title>
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
         <style type='text/css'>body{margin:0;padding:0;overflow:hid -Aden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
+        <link rel="stylesheet" href="assets/style.css" />
     </head>
+
     <body>
-        <h1>Welcome to Tourism Planner</h1>
-        <h2>Vacation approaching? 
+        <header class= "main-header">
+            <h1>Welcome to Tourism Planner</h1>
+            <h2>Vacation approaching? 
             Going on a business trip? 
-            Plan your trip today!
-        </h2>
+            Plan your trip today!</h2> 
+        </header>
 
-        <div id='printoutPanel'></div>
-        <div id='myMap' style='width: 50vw; height: 50vh;'></div>
-        <div>
-            <input type='text' id= "text" placeholder="address">
-            <button id="get-info" type="submit">enter city name</button>
-        </div>
+        <main>
+            <div id='printoutPanel'></div>
+            <div id='myMap' style='width: 50vw; height: 50vh;'></div>
 
-        <div id='info'>
-        <div id='list'>
+            <div>
+                <input type='text' id= "text" placeholder="Whats your favorite city?">
+                <button id="get-info" type="submit">enter city name</button>
+            </div>
+
+            <div id='info'>
+            <div id='list'>
+
+        </main>
 
         <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AlHZDmDuCSe95lvt1_Z_p2cMgLplD6bNalBJZKY8M9eEYDsoC0Vm4LBj6sb4L29c&callback=loadMapScenario'></script>
         <script src="assets/script.js"></script>
