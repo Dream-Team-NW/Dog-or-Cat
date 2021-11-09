@@ -21,3 +21,17 @@ main {
     align-items: center;
     
 }
+
+@media (max-width:1025px) {
+
+}
+
+@media (max-width:600px) {
+
+}
+
+@media (max-width:576px) {
+    body {
+        background-color: #bb8588;
+}
+}
