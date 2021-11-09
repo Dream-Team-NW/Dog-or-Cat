@@ -22,16 +22,17 @@ function getAttraction(long, lat) {
       .then(response => response.json())
       .then(function(data){
         console.log(data)
+        bingSearch(data[1].point.lon, data[1].point.lat)
       })
 };
 
 function bingSearch(long, lat){
   var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         mapTypeId: Microsoft.Maps.MapTypeId.road,
-        zoom: 18,
+        zoom: 25,
         center: new Microsoft.Maps.Location(lat, long)
     });
-    map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.streetside 
+    map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.birdseye 
     });
 }
 
