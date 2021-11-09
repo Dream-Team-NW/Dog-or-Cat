@@ -43,3 +43,12 @@ document.getElementById("get-info").addEventListener("click", function (event) {
     console.log(name)
     apiGet(name)
 });
+
+function errorMsg() {
+  var warning = document.getElementById("bar error");
+  if (inputEl.value === 0) {
+    warning.style.display = "block";
+  } else {
+    warning.style.display = "none";
+  }
+}
