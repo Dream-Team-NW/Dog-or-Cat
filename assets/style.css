@@ -28,3 +28,16 @@ card {
     align-items: center;
 
 }
+
+
+#start {
+    font-size: 30px;
+    background-color: #000;
+    border: .5px solid rgb(216, 166, 176);
+    border-radius: 10px;
+    color: #fff;
+    padding: 8px;
+    box-shadow: 0 0 30px 0 rgb(235, 161, 176),
+                0 0 30px 0 rgb(223, 163, 175),
+                0 0 10px 0 rgb(201, 138, 150) inset;
+};
