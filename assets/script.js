@@ -33,23 +33,28 @@ function getAttraction(long, lat) {
             .then(function(data){
               console.log(data);
               // append card
-              
               var attractionCard = document.createElement("div");
-              attractionCard.className += "card darken-1";
+              attractionCard.className += "card col darken-1";
               listEl.appendChild(attractionCard);
               // append name
-              var attractionCardName = document.createElement("div");
+              var attractionCardName = document.createElement("span");
+              attractionCardName.className += "card-title"
               attractionCardName.textContent = data.name;
               attractionCard.appendChild(attractionCardName);
               // append description
               var attractionCardDescription = document.createElement("div");
               attractionCardDescription.textContent = data.wikipedia_extracts.text;
               attractionCard.appendChild(attractionCardDescription);
-              // append button
-              var attractionCardButton = document.createElement("button");
-              attractionCardButton.className += "waves-effect waves-light btn";
-              attractionCardButton.innerHTML = "Add " + data.name;
-              attractionCard.appendChild(attractionCardButton);
+              // append button to map attraction
+              var attractionCardButtonMap = document.createElement("button");
+              attractionCardButtonMap.className += "waves-effect waves-light btn";
+              attractionCardButtonMap.innerHTML = "Map " + data.name;
+              attractionCard.appendChild(attractionCardButtonMap);
+              // append button to add attraction to list
+              var attractionCardButtonAdd = document.createElement("a");
+              attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
+              attractionCardButtonAdd.innerHTML = "+";
+              attractionCard.appendChild(attractionCardButtonAdd);
             })
         }
       })
