@@ -19,6 +19,7 @@ function apiGet(query) {
 
 function getAttraction(long, lat) {
   var attractionUrl = "https://api.opentripmap.com/0.1/en/places/radius?radius=10000&lon=" + long + "&lat=" + lat + "&kinds=amusement_parks,sport,water_parks,miniature_parks&format=json&limit=50&apikey=" + opentripKey;
+  listEl.innerHTML = "";
     fetch(attractionUrl)
       .then(response => response.json())
       .then(function(data){
@@ -32,6 +33,7 @@ function getAttraction(long, lat) {
             .then(function(data){
               console.log(data);
               // append card
+              
               var attractionCard = document.createElement("div");
               attractionCard.className += "card darken-1";
               listEl.appendChild(attractionCard);
@@ -69,6 +71,7 @@ document.getElementById("get-info").addEventListener("click", function (event) {
     let name = document.getElementById("text").value;
     console.log(name)
     apiGet(name)
+    document.getElementById("text").value = "";
 });
 
 
