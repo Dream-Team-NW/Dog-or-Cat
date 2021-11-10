@@ -1,5 +1,6 @@
 var inputEl = document.querySelector('#get-info')
 var listEl = document.querySelector("#list");
+var warning = document.getElementById("error")
 inputEl.addEventListener('click', apiGet)
 
 var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
@@ -18,6 +19,12 @@ function apiGet(query) {
       .then(response => response.json())
       .then(function(data){
         console.log(data)
+        // if (data.status === "NOT_FOUND") {
+        //   console.log("hi daddy")
+        //   warning.style.display = "inline";
+        //  } else {
+        //    warning.style.display = "none";
+        //  }
         getAttraction(data.lon, data.lat)
       })
       .catch(function (err) {
@@ -88,11 +95,3 @@ document.getElementById("get-info").addEventListener("click", function (event) {
 });
 
 
-function errorMsg() {
-  var warning = document.getElementById("bar error");
-  if (inputEl.value === false) {
-    warning.style.display = "block";
-  } else {
-    warning.style.display = "none";
-  }
-}
