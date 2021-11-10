@@ -4,6 +4,14 @@ inputEl.addEventListener('click', apiGet)
 
 var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
 
+document.getElementById("start").addEventListener("click", function(event){
+  event.preventDefault();
+  document.querySelector(".search-content").style.display = "block";
+  document.querySelector("#start").style.display = "none"
+  document.querySelector(".main-header").style.display = "none"
+  
+})
+
 function apiGet(query) {
  var locationUrl = "https://api.opentripmap.com/0.1/en/places/geoname?apikey=" + opentripKey+"&name="+query;
     fetch(locationUrl)
