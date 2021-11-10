@@ -49,13 +49,6 @@ function getAttraction(long, lat) {
               attractionCardButton.innerHTML = "Add " + data.name;
               attractionCard.appendChild(attractionCardButton);
             })
-          
-          // append card
-          
-
-          
-
-          
         }
       })
 };
