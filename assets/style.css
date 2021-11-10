@@ -39,6 +39,7 @@ header {
     border-radius: 10px;
     color: #fff;
     padding: 8px;
+    margin-top: 100px;
 }
 
 .logos { 
@@ -46,8 +47,6 @@ header {
     flex-direction: row;
     justify-content: center;
 }
-
-
 
 
 main {
