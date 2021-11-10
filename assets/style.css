@@ -1,24 +1,42 @@
-
-
-head {
-    display: flex;
-    align-items: center;
-
+:root {
+    --bluegrey: #546E7A;
+    --grey: #616161;
+    --purple: #9575CD;
+    --pink: #F50057;
+    --cyan: #18FFFF;
+    --lime: #C6FF00;
 }
 
 body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(166, 166, 212);
+    background-color: var(--bluegrey);
     padding: 10px;
-    color: black;
+    color: var(--purple);
     font-family: 'DM Serif Display', serif;
     margin: 10px;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
-h1 {
-    font-size: 200%;
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start-btn {
+    font-size: 25px;
+    font-weight: bold;
+    background-color: var(--cyan);
+    border: .5px solid black;
+    border-radius: 10px;
+    color: #fff;
+    padding: 8px;
 }
 
 main {
@@ -26,26 +44,17 @@ main {
     align-items: center;
 }
 
+.main-header {
+    text-align: center;
+}
 
-card {
+
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
-
-
-#start {
-    font-size: 30px;
-    background-color: #000;
-    border: .5px solid rgb(216, 166, 176);
-    border-radius: 10px;
-    color: #fff;
-    padding: 8px;
-    box-shadow: 0 0 30px 0 rgb(235, 161, 176),
-                0 0 30px 0 rgb(223, 163, 175),
-                0 0 10px 0 rgb(201, 138, 150) inset;
-};
 
 
 .error {
