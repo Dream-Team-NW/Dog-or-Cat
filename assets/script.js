@@ -74,7 +74,7 @@ document.getElementById("get-info").addEventListener("click", function (event) {
 
 function errorMsg() {
   var warning = document.getElementById("bar error");
-  if (inputEl.value === 0) {
+  if (inputEl.value === false) {
     warning.style.display = "block";
   } else {
     warning.style.display = "none";
