@@ -42,16 +42,9 @@ header {
     margin-top: 100px;
 }
 
-.logos { 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-
-main {
-    display: flex;
-    align-items: center;
+/* search content is hidden on the welcome page */
+.search-content {
+    display: none;
 }
 
 .main-header {
@@ -70,19 +63,33 @@ main {
     color: #ba3939;
     background: #ffe0e0;
     border: 1px solid #a33a3a;
-  }
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+}
+
+.logos { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 
 @media (max-width:1025px) {
-
+    
 }
 
 @media (max-width:600px) {
-
+    
 }
 
 @media (max-width:576px) {
     body {
         background-color: #bb8588;
-}
+    }
 }
 
