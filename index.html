@@ -9,13 +9,18 @@
         <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
         <style type='text/css'>body{margin:0;padding:0;overflow:hid -Aden;font-family:'Segoe UI',Helvetica,Arial,Sans-Serif}</style>
         <link rel="stylesheet" href="assets/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     </head>
 
     <body>
         <header class= "main-header">
             <h1>Welcome to Tourism Planner</h1>
-            <h2>Vacation approaching? 
-            Going on a business trip? 
+            <h2>Vacation approaching? Going on a business trip? 
+            <br> 
             Plan your trip today!</h2> 
 
             <div class="logo">
@@ -34,6 +39,7 @@
                 <input type='text' id= "text" placeholder="Whats your favorite city?">
                 <button id="get-info" type="submit">enter city name</button>
             </div>
+            <div class="bar error">Please enter valid City name.</div>
 
             <div id='info'>
             <div id='list'>
@@ -45,6 +51,7 @@
         </div>
 
         <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AlHZDmDuCSe95lvt1_Z_p2cMgLplD6bNalBJZKY8M9eEYDsoC0Vm4LBj6sb4L29c&callback=loadMapScenario'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="assets/script.js"></script>
     </body>
 </html>

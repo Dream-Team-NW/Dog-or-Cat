@@ -1,3 +1,5 @@
+
+
 head {
     display: flex;
     align-items: center;
@@ -9,8 +11,10 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: rgb(166, 166, 212);
-    padding: 1px;
+    padding: 10px;
     color: black;
+    font-family: 'DM Serif Display', serif;
+    margin: 10px;
 }
 
 h1 {
@@ -21,6 +25,7 @@ main {
     display: flex;
     align-items: center;
 }
+
 
 card {
     display: flex;
@@ -41,3 +46,25 @@ card {
                 0 0 30px 0 rgb(223, 163, 175),
                 0 0 10px 0 rgb(201, 138, 150) inset;
 };
+
+
+.error {
+    color: #ba3939;
+    background: #ffe0e0;
+    border: 1px solid #a33a3a;
+  }
+
+@media (max-width:1025px) {
+
+}
+
+@media (max-width:600px) {
+
+}
+
+@media (max-width:576px) {
+    body {
+        background-color: #bb8588;
+}
+}
+
