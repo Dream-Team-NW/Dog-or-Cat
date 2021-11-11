@@ -1,7 +1,6 @@
 var inputEl = document.querySelector('#get-info')
 var listEl = document.querySelector("#list");
 var errorEl = document.getElementById('error')
-var warning = document.getElementById("error")
 inputEl.addEventListener('click', apiGet)
 var savedAttractionsEl = document.querySelector("#savedAttractions");
 var savedAttractionsXid = [];
