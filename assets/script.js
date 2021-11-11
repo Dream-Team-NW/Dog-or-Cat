@@ -1,6 +1,8 @@
 var inputEl = document.querySelector('#get-info')
 var listEl = document.querySelector("#list");
 var warning = document.getElementById("error")
+var SubmissionResponseEl = document.querySelector('#response')
+
 inputEl.addEventListener('click', apiGet)
 
 var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
@@ -70,10 +72,17 @@ function getAttraction(long, lat) {
               attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
               attractionCardButtonAdd.innerHTML = "+";
               attractionCard.appendChild(attractionCardButtonAdd);
+              
+              attractionCardButtonMap.addEventListener("click", function(event) {
+                event.preventDefault();
+                bingSearch(data.point.lon, data.point.lat)
+              });
             })
         }
       })
+
 };
+
 
 function bingSearch(long, lat){
   var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
@@ -94,4 +103,13 @@ document.getElementById("get-info").addEventListener("click", function (event) {
     document.getElementById("text").value = "";
 });
 
+
+
+function showResponse(event, long, lat) {
+  event.preventDefault();
+  // console.log("helloooo", event)
+  bingSearch(long, lat)
+  var response = 
+  SubmissionResponseEl.textContent = response;
+}
 
