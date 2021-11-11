@@ -23,18 +23,6 @@ document.getElementById("start").addEventListener("click", function(event){
 
 function apiGet(query) {
 
-  var locationUrl = "https://api.opentripmap.com/0.1/en/places/geoname?apikey=" + opentripKey+"&name="+query;
-  fetch(locationUrl)
-  .then(response => response.json())
-  .then(function(data){
-    console.log(data)
-    // if (data.status === "NOT_FOUND") {
-      //   console.log("hi daddy")
-      //   warning.style.display = "inline";
-      //  } else {
-        //    warning.style.display = "none";
-        //  }
-
  var locationUrl = "https://api.opentripmap.com/0.1/en/places/geoname?apikey=" + opentripKey+"&name="+query;
     fetch(locationUrl)
       .then(response => response.json())
@@ -92,72 +80,36 @@ function apiGet(query) {
             attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
             attractionCardButtonAdd.innerHTML = "+";
             attractionCard.appendChild(attractionCardButtonAdd);
+            // append hidden div of xid
+            var attractionWiki = document.createElement("div")
+            attractionWiki.setAttribute("style", "display:none;");
+            attractionWiki.id = "xid"
+            attractionWiki.innerHTML = data.xid;
+            attractionCard.appendChild(attractionWiki);
+            console.log(attractionWiki);
+            // addEventListener to append card to savedAttraction
+            attractionCardButtonAdd.addEventListener("click", function(event) {
+              event.preventDefault();
+              pickAttraction(this);
+            });
+            function pickAttraction(target) {
+              var xidButton = target;
+              var xidCard = xidButton.closest(".card");
+              var xid = xidCard.children[4].innerHTML;
+              savedAttractionsXid.push(xid);
+              localStorage.setItem("savedXID", JSON.stringify(savedAttractionsXid));
+            }
+
+              
+            attractionCardButtonMap.addEventListener("click", function(event) {
+              event.preventDefault();
+              bingSearch(data.point.lon, data.point.lat)
+            });
           })
         }
       })
     };
-    
-    function bingSearch(long, lat){
-      var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
 
-            .then(response => response.json())
-            .then(function(data){
-              console.log(data);
-              // append card
-              var attractionCard = document.createElement("div");
-              attractionCard.className += "card col darken-1";
-              listEl.appendChild(attractionCard);
-              // append name
-              var attractionCardName = document.createElement("span");
-              attractionCardName.className += "card-title"
-              attractionCardName.textContent = data.name;
-              attractionCard.appendChild(attractionCardName);
-              // append description
-              var attractionCardDescription = document.createElement("div");
-              attractionCardDescription.textContent = data.wikipedia_extracts.text;
-              attractionCard.appendChild(attractionCardDescription);
-              // append button to map attraction
-              var attractionCardButtonMap = document.createElement("button");
-              attractionCardButtonMap.className += "waves-effect waves-light btn";
-              attractionCardButtonMap.innerHTML = "Map " + data.name;
-              attractionCard.appendChild(attractionCardButtonMap);
-              // append button to add attraction to list
-              var attractionCardButtonAdd = document.createElement("a");
-              attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
-              attractionCardButtonAdd.innerHTML = "+";
-              attractionCard.appendChild(attractionCardButtonAdd);
-
-              // append hidden div of xid
-              var attractionWiki = document.createElement("div")
-              attractionWiki.setAttribute("style", "display:none;");
-              attractionWiki.id = "xid"
-              attractionWiki.innerHTML = data.xid;
-              attractionCard.appendChild(attractionWiki);
-              console.log(attractionWiki);
-              // addEventListener to append card to savedAttraction
-              attractionCardButtonAdd.addEventListener("click", function(event) {
-                event.preventDefault();
-                pickAttraction(this);
-              });
-              function pickAttraction(target) {
-                var xidButton = target;
-                var xidCard = xidButton.closest(".card");
-                var xid = xidCard.children[4].innerHTML;
-                savedAttractionsXid.push(xid);
-                localStorage.setItem("savedXID", JSON.stringify(savedAttractionsXid));
-              }
-
-              
-              attractionCardButtonMap.addEventListener("click", function(event) {
-                event.preventDefault();
-                bingSearch(data.point.lon, data.point.lat)
-              });
-
-            })
-        }
-      })
-
-};
 
 
 function bingSearch(long, lat){
@@ -171,23 +123,6 @@ function bingSearch(long, lat){
       });
     };
     
-    document.getElementById("get-info").addEventListener("click", function (event) {
-      event.preventDefault();
-      document.querySelector(".city-search").style.display = "none"
-      console.log('click')
-        let name = document.getElementById("text").value;
-        console.log(name)
-        apiGet(name)
-        document.getElementById("text").value = "";
-    });
-
-    
-    
-    
-
-    map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.birdseye 
-    });
-};
 
 document.getElementById("get-info").addEventListener("click", function (event) {
   event.preventDefault();
@@ -197,13 +132,3 @@ document.getElementById("get-info").addEventListener("click", function (event) {
     apiGet(name)
     document.getElementById("text").value = "";
 });
-
-
-// function errorMsg(){
-//   if (data.status === "NOT_FOUND") {
-//     errorEl.style.display = "block";
-//   } else {
-//   errorEl.style.display = "none";
-//   }
-// }
-
