@@ -20,7 +20,6 @@ document.getElementById("start").addEventListener("click", function(event){
   
 })
 
-
 function apiGet(query) {
 
  var locationUrl = "https://api.opentripmap.com/0.1/en/places/geoname?apikey=" + opentripKey+"&name="+query;
