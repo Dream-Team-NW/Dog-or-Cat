@@ -1,6 +1,8 @@
 var inputEl = document.querySelector('#get-info')
 var listEl = document.querySelector("#list");
 var warning = document.getElementById("error")
+
+
 inputEl.addEventListener('click', apiGet)
 var savedAttractionsEl = document.querySelector("#savedAttractions");
 var savedAttractionsXid = [];
@@ -76,6 +78,7 @@ function getAttraction(long, lat) {
               attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
               attractionCardButtonAdd.innerHTML = "+";
               attractionCard.appendChild(attractionCardButtonAdd);
+
               // append hidden div of xid
               var attractionWiki = document.createElement("div")
               attractionWiki.setAttribute("style", "display:none;");
@@ -95,10 +98,19 @@ function getAttraction(long, lat) {
                 savedAttractionsXid.push(xid);
                 localStorage.setItem("savedXID", JSON.stringify(savedAttractionsXid));
               }
+
+              
+              attractionCardButtonMap.addEventListener("click", function(event) {
+                event.preventDefault();
+                bingSearch(data.point.lon, data.point.lat)
+              });
+
             })
         }
       })
+
 };
+
 
 function bingSearch(long, lat){
   var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
@@ -118,5 +130,3 @@ document.getElementById("get-info").addEventListener("click", function (event) {
     apiGet(name)
     document.getElementById("text").value = "";
 });
-
-
