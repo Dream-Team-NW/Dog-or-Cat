@@ -4,6 +4,12 @@ var warning = document.getElementById("error")
 
 
 inputEl.addEventListener('click', apiGet)
+var savedAttractionsEl = document.querySelector("#savedAttractions");
+var savedAttractionsXid = [];
+
+if (JSON.parse(localStorage.getItem('savedXID')) !== null) {
+  savedAttractionsXid = JSON.parse(localStorage.getItem("savedXID"));
+};
 
 var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
 
@@ -72,11 +78,33 @@ function getAttraction(long, lat) {
               attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
               attractionCardButtonAdd.innerHTML = "+";
               attractionCard.appendChild(attractionCardButtonAdd);
+
+              // append hidden div of xid
+              var attractionWiki = document.createElement("div")
+              attractionWiki.setAttribute("style", "display:none;");
+              attractionWiki.id = "xid"
+              attractionWiki.innerHTML = data.xid;
+              attractionCard.appendChild(attractionWiki);
+              console.log(attractionWiki);
+              // addEventListener to append card to savedAttraction
+              attractionCardButtonAdd.addEventListener("click", function(event) {
+                event.preventDefault();
+                pickAttraction(this);
+              });
+              function pickAttraction(target) {
+                var xidButton = target;
+                var xidCard = xidButton.closest(".card");
+                var xid = xidCard.children[4].innerHTML;
+                savedAttractionsXid.push(xid);
+                localStorage.setItem("savedXID", JSON.stringify(savedAttractionsXid));
+              }
+
               
               attractionCardButtonMap.addEventListener("click", function(event) {
                 event.preventDefault();
                 bingSearch(data.point.lon, data.point.lat)
               });
+
             })
         }
       })
