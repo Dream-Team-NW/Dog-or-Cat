@@ -1,8 +1,7 @@
 var inputEl = document.querySelector('#get-info')
 var listEl = document.querySelector("#list");
+var errorEl = document.getElementById('error')
 var warning = document.getElementById("error")
-
-
 inputEl.addEventListener('click', apiGet)
 var savedAttractionsEl = document.querySelector("#savedAttractions");
 var savedAttractionsXid = [];
@@ -27,12 +26,11 @@ function apiGet(query) {
       .then(response => response.json())
       .then(function(data){
         console.log(data)
-        // if (data.status === "NOT_FOUND") {
-        //   console.log("hi daddy")
-        //   warning.style.display = "inline";
-        //  } else {
-        //    warning.style.display = "none";
-        //  }
+        if (data.status === "NOT_FOUND") {
+        errorEl.style.display = "block";
+        } else {
+        errorEl.style.display = "none";
+        }
         getAttraction(data.lon, data.lat)
       })
       .catch(function (err) {
@@ -130,3 +128,12 @@ document.getElementById("get-info").addEventListener("click", function (event) {
     apiGet(name)
     document.getElementById("text").value = "";
 });
+
+
+// function errorMsg(){
+//   if (data.status === "NOT_FOUND") {
+//     errorEl.style.display = "block";
+//   } else {
+//   errorEl.style.display = "none";
+//   }
+// }
