@@ -1,7 +1,7 @@
 var inputEl = document.querySelector('#get-info')
 var listEl = document.querySelector("#list");
 var warning = document.getElementById("error")
-var SubmissionResponseEl = document.querySelector('#response')
+
 
 inputEl.addEventListener('click', apiGet)
 
@@ -102,14 +102,3 @@ document.getElementById("get-info").addEventListener("click", function (event) {
     apiGet(name)
     document.getElementById("text").value = "";
 });
-
-
-
-function showResponse(event, long, lat) {
-  event.preventDefault();
-  // console.log("helloooo", event)
-  bingSearch(long, lat)
-  var response = 
-  SubmissionResponseEl.textContent = response;
-}
-
