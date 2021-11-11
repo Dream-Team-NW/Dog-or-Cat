@@ -50,7 +50,11 @@ header {
 /* main {
     display: flex;
     align-items: center;
+
 } */
+
+}
+
 
 /* search content is hidden on the welcome page */
 .search-content {
@@ -133,12 +137,13 @@ header {
 }
 
 
-.error {
+#error {
     color: #ba3939;
     background: #ffe0e0;
     border: 1px solid #a33a3a;
     display: none;
 }
+
 
 footer {
     position:absolute;
