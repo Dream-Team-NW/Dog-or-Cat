@@ -49,6 +49,7 @@ header {
 main {
     display: flex;
     align-items: center;
+}
 
 /* search content is hidden on the welcome page */
 .search-content {
@@ -72,7 +73,6 @@ main {
     background: #ffe0e0;
     border: 1px solid #a33a3a;
     display: none;
-  }
 }
 
 footer {
