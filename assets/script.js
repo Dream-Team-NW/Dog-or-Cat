@@ -1,6 +1,7 @@
 var inputEl = document.querySelector('#get-info')
 var listEl = document.querySelector("#list");
 var errorEl = document.getElementById('error')
+var savedEl = document.querySelector("#saved");
 inputEl.addEventListener('click', apiGet)
 var savedAttractionsEl = document.querySelector("#savedAttractions");
 var savedAttractionsXid = [];
@@ -19,6 +20,8 @@ document.getElementById("start").addEventListener("click", function(event){
   document.querySelector(".main-header").style.display = "none"
   
 })
+
+showSavedAttraction();
 
 function apiGet(query) {
 
@@ -67,18 +70,24 @@ function apiGet(query) {
             attractionCard.appendChild(attractionCardName);
             // append description
             var attractionCardDescription = document.createElement("div");
+            attractionCardDescription.id = "description";
             attractionCardDescription.textContent = data.wikipedia_extracts.text;
             attractionCard.appendChild(attractionCardDescription);
+            // append button div
+            var attractionCardButtons = document.createElement("div");
+            attractionCardButtons.className += "row"
+            attractionCardButtons.id = "buttons"
+            attractionCard.appendChild(attractionCardButtons)
             // append button to map attraction
             var attractionCardButtonMap = document.createElement("button");
             attractionCardButtonMap.className += "waves-effect waves-light btn";
             attractionCardButtonMap.innerHTML = "Map " + data.name;
-            attractionCard.appendChild(attractionCardButtonMap);
+            attractionCardButtons.appendChild(attractionCardButtonMap);
             // append button to add attraction to list
             var attractionCardButtonAdd = document.createElement("a");
             attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
             attractionCardButtonAdd.innerHTML = "+";
-            attractionCard.appendChild(attractionCardButtonAdd);
+            attractionCardButtons.appendChild(attractionCardButtonAdd);
             // append hidden div of xid
             var attractionWiki = document.createElement("div")
             attractionWiki.setAttribute("style", "display:none;");
@@ -94,9 +103,15 @@ function apiGet(query) {
             function pickAttraction(target) {
               var xidButton = target;
               var xidCard = xidButton.closest(".card");
-              var xid = xidCard.children[4].innerHTML;
-              savedAttractionsXid.push(xid);
-              localStorage.setItem("savedXID", JSON.stringify(savedAttractionsXid));
+              var xid = xidCard.children[3].innerHTML;
+              var xidCheck = savedAttractionsXid.includes(xid);
+              if (xidCheck == true) {
+                return;
+              } else {
+                savedAttractionsXid.push(xid);
+                localStorage.setItem("savedXID", JSON.stringify(savedAttractionsXid));
+                showSavedAttraction();
+              };
             }
 
               
@@ -109,8 +124,6 @@ function apiGet(query) {
       })
     };
 
-
-
 function bingSearch(long, lat){
   var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
 
@@ -122,6 +135,38 @@ function bingSearch(long, lat){
       });
     };
     
+function showSavedAttraction() {
+  savedEl.innerHTML = "";
+  for (i = 0; i < savedAttractionsXid.length; i++) {
+    var attractionXID = savedAttractionsXid[i];
+    var attractionDescriptionUrl = "https://api.opentripmap.com/0.1/en/places/xid/" + attractionXID + "?apikey=" + opentripKey;
+    fetch(attractionDescriptionUrl)
+      .then(response => response.json())
+      .then(function(data) {
+        console.log(data);
+        // append card
+        var attractionCard = document.createElement("div");
+        attractionCard.className += "card col darken-1";
+        listEl.appendChild(attractionCard);
+        // append name
+        var attractionCardName = document.createElement("span");
+        attractionCardName.className += "card-title"
+        attractionCardName.textContent = data.name;
+        attractionCard.appendChild(attractionCardName);
+        // append description
+        var attractionCardDescription = document.createElement("div");
+        attractionCardDescription.textContent = data.wikipedia_extracts.text;
+        attractionCard.appendChild(attractionCardDescription);
+        // append button to map attraction
+        var attractionCardButtonMap = document.createElement("button");
+        attractionCardButtonMap.className += "waves-effect waves-light btn";
+        attractionCardButtonMap.innerHTML = "Map " + data.name;
+        attractionCard.appendChild(attractionCardButtonMap);
+
+      });
+  };
+};
+  
 
 document.getElementById("get-info").addEventListener("click", function (event) {
   event.preventDefault();
