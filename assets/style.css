@@ -45,7 +45,16 @@ header {
     padding: 8px;
 }
 
+#containerPositioning {
+    display: flex;
+    justify-content: space-around;
+}
 
+#containerMiddle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 /* main {
     display: flex;
