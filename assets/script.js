@@ -62,6 +62,7 @@ function apiGet(query) {
             // append card
             var attractionCard = document.createElement("div");
             attractionCard.className += "card col darken-1";
+            attractionCard.setAttribute("style", "border-radius: 20px;")
             listEl.appendChild(attractionCard);
             // append name
             var attractionCardName = document.createElement("span");
@@ -146,6 +147,7 @@ function showSavedAttraction() {
         // append card
         var attractionCard = document.createElement("div");
         attractionCard.className += "card col darken-1";
+        attractionCard.setAttribute("style", "border-radius: 20px;")
         savedEl.appendChild(attractionCard);
         // append name
         var attractionCardName = document.createElement("span");
