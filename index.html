@@ -28,20 +28,27 @@
         
         <main class="search-content">
             <div class="card" id="printoutPanel"></div>
-            <div id="myMap">
-            </div>
-            
-            <div class="city-search">
-                <input type="text" id= "text" placeholder="Whats your favorite city?">
-                <div id="btn-div">
-                    <button id="get-info" type="submit">Search</button>
+           
+            <div class="row" id="containerPositioning">
+                <div class="col l2" id='saved'>
+                    <div class="card">Saved Attraction</div>
+                </div>
+                <div class="col l7" id="containerMiddle">
+                    <div id="myMap"></div>
+                    <div class="city-search">
+                        <input type="text" id= "text" placeholder="Whats your favorite city?">
+                        <div id="btn-div">
+                            <button id="get-info" type="submit">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l2" id='list'>
+                    <div class="card">City Attraction</div>
                 </div>
             </div>
 
             <div id="error">Please enter a valid city name.</div>
 
-            <div id='saved'></div>
-            <div id='list'></div>
         </main>
 
         <footer>
