@@ -110,11 +110,11 @@ function apiGet(query) {
               } else {
                 savedAttractionsXid.push(xid);
                 localStorage.setItem("savedXID", JSON.stringify(savedAttractionsXid));
+                savedEl.innerHTML = "";
                 showSavedAttraction();
               };
             }
-
-              
+ 
             attractionCardButtonMap.addEventListener("click", function(event) {
               event.preventDefault();
               bingSearch(data.point.lon, data.point.lat)
@@ -136,7 +136,6 @@ function bingSearch(long, lat){
     };
     
 function showSavedAttraction() {
-  savedEl.innerHTML = "";
   for (i = 0; i < savedAttractionsXid.length; i++) {
     var attractionXID = savedAttractionsXid[i];
     var attractionDescriptionUrl = "https://api.opentripmap.com/0.1/en/places/xid/" + attractionXID + "?apikey=" + opentripKey;
@@ -147,7 +146,7 @@ function showSavedAttraction() {
         // append card
         var attractionCard = document.createElement("div");
         attractionCard.className += "card col darken-1";
-        listEl.appendChild(attractionCard);
+        savedEl.appendChild(attractionCard);
         // append name
         var attractionCardName = document.createElement("span");
         attractionCardName.className += "card-title"
@@ -163,6 +162,10 @@ function showSavedAttraction() {
         attractionCardButtonMap.innerHTML = "Map " + data.name;
         attractionCard.appendChild(attractionCardButtonMap);
 
+        attractionCardButtonMap.addEventListener("click", function(event) {
+          event.preventDefault();
+          bingSearch(data.point.lon, data.point.lat)
+        });
       });
   };
 };
