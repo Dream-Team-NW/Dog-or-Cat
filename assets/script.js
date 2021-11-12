@@ -81,7 +81,7 @@ function apiGet(query) {
             // append button to map attraction
             var attractionCardButtonMap = document.createElement("button");
             attractionCardButtonMap.className += "waves-effect waves-light btn";
-            attractionCardButtonMap.innerHTML = "Map " + data.name;
+            attractionCardButtonMap.innerHTML = "Map ";
             attractionCardButtons.appendChild(attractionCardButtonMap);
             // append button to add attraction to list
             var attractionCardButtonAdd = document.createElement("a");
