@@ -78,12 +78,13 @@ function getAttraction(long, lat) {
         attractionCard.appendChild(attractionCardButtons)
         // append button to map attraction
         var attractionCardButtonMap = document.createElement("button");
+        attractionCardButtonMap.id = ("map-btn")
         attractionCardButtonMap.className += "waves-effect waves-light btn";
         attractionCardButtonMap.innerHTML = "Map ";
         attractionCardButtons.appendChild(attractionCardButtonMap);
         // append button to add attraction to list
         var attractionCardButtonAdd = document.createElement("a");
-        attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
+        attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light purple";
         attractionCardButtonAdd.innerHTML = "+";
         attractionCardButtons.appendChild(attractionCardButtonAdd);
         // append hidden div of xid
