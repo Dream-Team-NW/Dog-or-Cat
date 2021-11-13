@@ -15,7 +15,12 @@ A bird's eye view of one of the attractions via Bing maps are shown above the se
 When the user clicks the "+" button displayed on the attraction cards, the attraction is saved into the user's local storage. The attraction is then appended to the left of the search elements as a card. These cards will be appended when the application is started.
 
 ## Screenshots
-![Weather Dashboard Start](./assets/images/weatherDash1.jpg)
+![Desktop screenshot](https://github.com/Dream-Team-NW/Tourism-Planner/blob/main/assets/img/screenshotmain.png)
+![Desktop screenshot](https://github.com/Dream-Team-NW/Tourism-Planner/blob/main/assets/img/screenshot2.png)
+![Desktop screenshot](https://github.com/Dream-Team-NW/Tourism-Planner/blob/main/assets/img/screenshot3.png)
+![Mobile screenshot](https://github.com/Dream-Team-NW/Tourism-Planner/blob/main/assets/img/screenshotmobile.png)
+![Mobile screenshot](https://github.com/Dream-Team-NW/Tourism-Planner/blob/main/assets/img/screenshotmobile2.png)
+![Mobile screenshot](https://github.com/Dream-Team-NW/Tourism-Planner/blob/main/assets/img/screenshotmobile3.png)
 ## Links
 
 GitHub Repository: [https://github.com/Dream-Team-NW/Tourism-Planner](https://github.com/Dream-Team-NW/Tourism-Planner)
