@@ -161,8 +161,8 @@ header {
 }
 
 #error {
-    color: #0f0404;
-    background: #a70606;
+    color: #ba3939;
+    background: #ffe0e0;
     border: 1px solid #a33a3a;
     display: none;
     font-family: 'Open Sans', sans-serif;
