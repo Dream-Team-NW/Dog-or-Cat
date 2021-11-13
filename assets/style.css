@@ -65,13 +65,11 @@ header {
 }
 
 
-/* main {
-    display: flex;
-    align-items: center;
 
-} */
 
-/* search content is hidden on the welcome page */
+
+
+
 .search-content {
     display: none;
 }
@@ -137,7 +135,7 @@ header {
 }
 
 #text[type=text] {
-    transition: width .3s ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 #text[type=text]:focus {
