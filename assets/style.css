@@ -17,6 +17,7 @@ body {
     font-family: 'DM Serif Display', serif;
     width: 100%;
     height: 100%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -24,6 +25,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .main-header {
@@ -33,6 +35,7 @@ header {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .start-btn {
@@ -43,6 +46,7 @@ header {
     border-radius: 10px;
     color: #fff;
     padding: 8px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #containerPositioning {
@@ -80,12 +84,14 @@ header {
     padding: 10px 10px;
     margin: 10px;
     border: 3px solid var(--bluegrey);
+    font-family: 'Open Sans', sans-serif;
 }
 
 .city-search {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .search-content-style {
@@ -118,6 +124,7 @@ header {
     padding: 10px 10px;
     border: 3px solid black;
     border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #text:hover {
@@ -139,7 +146,7 @@ header {
 }
 
 #myMap {
-    width: 50vw; 
+    width: 59vw; 
     height: 50vh;
 }
 
@@ -158,6 +165,7 @@ header {
     background: #ffe0e0;
     border: 1px solid #a33a3a;
     display: none;
+    font-family: 'Open Sans', sans-serif;
 }
 
 

@@ -30,7 +30,7 @@ function apiGet(query) {
       .then(response => response.json())
       .then(function(data){
         console.log(data)
-        if (data.status === "NOT_FOUND") {
+        if (data === "NOT_FOUND") {
         errorEl.style.display = "block";
         } else {
         errorEl.style.display = "none";
