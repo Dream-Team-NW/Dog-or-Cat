@@ -59,7 +59,7 @@ function apiGet(query) {
             console.log(data);
             // append card
             var attractionCard = document.createElement("div");
-            attractionCard.className += "card col darken-1";
+            attractionCard.className += "card col darken-1 card-panel hoverable";
             attractionCard.setAttribute("style", "border-radius: 20px; font-family: Times New Roman;")
             listEl.appendChild(attractionCard);
             // append name
@@ -85,7 +85,7 @@ function apiGet(query) {
             attractionCardButtons.appendChild(attractionCardButtonMap);
             // append button to add attraction to list
             var attractionCardButtonAdd = document.createElement("a");
-            attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light red";
+            attractionCardButtonAdd.className += "btn-floating btn-large waves-effect waves-light purple";
             attractionCardButtonAdd.innerHTML = "+";
             attractionCardButtons.appendChild(attractionCardButtonAdd);
             // append hidden div of xid
@@ -145,7 +145,7 @@ function showSavedAttraction() {
         console.log(data);
         // append card
         var attractionCard = document.createElement("div");
-        attractionCard.className += "card col darken-1";
+        attractionCard.className += "card col darken-1 card-panel hoverable";
         attractionCard.setAttribute("style", "border-radius: 20px;")
         savedEl.appendChild(attractionCard);
         // append name
@@ -155,10 +155,14 @@ function showSavedAttraction() {
         attractionCard.appendChild(attractionCardName);
         // append description
         var attractionCardDescription = document.createElement("div");
+
+        attractionCardDescription.className = ("savedinfo-style")
+
         attractionCardDescription.textContent = data.wikipedia_extracts.text;
         attractionCard.appendChild(attractionCardDescription);
         // append button to map attraction
         var attractionCardButtonMap = document.createElement("button");
+        attractionCardButtonMap.id = ("savedattr-map-btn")
         attractionCardButtonMap.className += "waves-effect waves-light btn";
         attractionCardButtonMap.innerHTML = "Map " + data.name;
         attractionCard.appendChild(attractionCardButtonMap);
