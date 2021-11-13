@@ -5,7 +5,7 @@
 - When the user selects an attraction they are shown the location on a map.
 - When the user saves a location it is stored in localStorage and shown on the left side of the page under "Save Attraction" section.
 - The user is able to search multiple cities.
-- The user is able save multiple attractions.
+- The user is able save multiple attractions in multiple cities.
 
 ## Welcome to Tour Baagii!
 At the application's starting page, the user is presented with a start button. When the user clicks the start button, the user is taken to a text input field and a "Search" button.
