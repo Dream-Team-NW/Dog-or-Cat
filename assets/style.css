@@ -60,7 +60,7 @@ header {
 }
 
 #saved, #list {
-    height: 800px;
+    height: 400px;
     overflow-y: auto;
 }
 
@@ -155,6 +155,11 @@ header {
     color: black
 }
 
+#map-btn {
+    left: 150px;
+    top: 12px;
+}
+
 #buttons {
     display: flex;
     justify-content: space-between;
@@ -192,7 +197,9 @@ footer {
 }
 
 @media (max-width:576px) {
-    body {
-        background-color: #bb8588;
+    #containerPositioning {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 }

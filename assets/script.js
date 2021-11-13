@@ -10,8 +10,6 @@ if (JSON.parse(localStorage.getItem('savedXID')) !== null) {
   savedAttractionsXid = JSON.parse(localStorage.getItem("savedXID"));
 };
 
-var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
-
 document.getElementById("start").addEventListener("click", function(event){
   event.preventDefault();
   document.querySelector(".search-content").style.display = "flex";
@@ -79,6 +77,7 @@ function apiGet(query) {
             attractionCard.appendChild(attractionCardButtons)
             // append button to map attraction
             var attractionCardButtonMap = document.createElement("button");
+            attractionCardButtonMap.id = "map-btn"
             attractionCardButtonMap.className += "waves-effect waves-light btn";
             attractionCardButtonMap.innerHTML = "Map ";
             attractionCardButtons.appendChild(attractionCardButtonMap);
