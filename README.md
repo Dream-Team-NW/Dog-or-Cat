@@ -19,6 +19,7 @@ When the user clicks the "+" button displayed on the attraction cards, the attra
 ## Links
 
 GitHub Repository: [https://github.com/Dream-Team-NW/Tourism-Planner](https://github.com/Dream-Team-NW/Tourism-Planner)
+
 Deployed Application: [https://dream-team-nw.github.io/Tourism-Planner/](https://dream-team-nw.github.io/Tourism-Planner/)
 
 ## collaborators
