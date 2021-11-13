@@ -6,6 +6,8 @@ inputEl.addEventListener('click', apiGet)
 var savedAttractionsEl = document.querySelector("#savedAttractions");
 var savedAttractionsXid = [];
 
+var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
+
 if (JSON.parse(localStorage.getItem('savedXID')) !== null) {
   savedAttractionsXid = JSON.parse(localStorage.getItem("savedXID"));
 };
