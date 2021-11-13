@@ -13,8 +13,7 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: var(--bluegrey);
-    color: var(--purple);
-    font-family: 'DM Serif Display', serif;
+    color: rgb(215, 107, 235);
     width: 100%;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
@@ -31,10 +30,10 @@ header {
 .main-header {
     text-align: center;
     text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    2px 2px 0 #000,
+    2px 2px 0 #000,
+    2px 2px 0 #000,
+    2px 2px 0 var(--grey);
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -44,7 +43,7 @@ header {
     background-color: var(--cyan);
     border: .5px solid black;
     border-radius: 10px;
-    color: #fff;
+    color: black;
     padding: 8px;
     font-family: 'Open Sans', sans-serif;
 }
@@ -107,7 +106,7 @@ header {
     background-color: var(--cyan);
     border: .5px solid black;
     border-radius: 10px;
-    color: #fff;
+    color: black;
     max-width: 20%;
     padding: 10px;
 }
@@ -153,6 +152,7 @@ header {
 .card {
     display: flex;
     flex-direction: column;
+    color: black
 }
 
 #buttons {
@@ -177,7 +177,8 @@ footer {
 #logos { 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    color: black;
 }
 
 

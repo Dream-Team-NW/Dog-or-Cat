@@ -24,24 +24,21 @@ document.getElementById("start").addEventListener("click", function(event){
 showSavedAttraction();
 
 function apiGet(query) {
-
  var locationUrl = "https://api.opentripmap.com/0.1/en/places/geoname?apikey=" + opentripKey+"&name="+query;
     fetch(locationUrl)
       .then(response => response.json())
       .then(function(data){
         console.log(data)
-        if (data === "NOT_FOUND") {
-        errorEl.style.display = "block";
+        if (data.status === "OK") {
+        getAttraction(data.lon, data.lat);
         } else {
-        errorEl.style.display = "none";
+        errorEl.style.display = "block";
         }
-
-        getAttraction(data.lon, data.lat)
       })
       .catch(function (err) {
         console.log("Fetch Error :-S", err);
       });
-    };
+};
     
     function getAttraction(long, lat) {
       var attractionUrl = "https://api.opentripmap.com/0.1/en/places/radius?radius=10000&lon=" + long + "&lat=" + lat + "&kinds=amusement_parks,sport,water_parks,miniature_parks&format=json&limit=50&apikey=" + opentripKey;
@@ -50,6 +47,7 @@ function apiGet(query) {
       .then(response => response.json())
       .then(function(data){
         console.log(data)
+        errorEl.style.display = "none"
         bingSearch(data[1].point.lon, data[1].point.lat)
         for (i = 0; i < 5; i++) {
           var attractionXID = data[i].xid;
@@ -123,7 +121,7 @@ function apiGet(query) {
           })
         }
       })
-    };
+};
 
 function bingSearch(long, lat){
   var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
