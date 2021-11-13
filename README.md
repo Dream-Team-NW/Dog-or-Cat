@@ -8,8 +8,10 @@
 - The user is able save multiple attractions in multiple cities.
 
 ## Welcome to Tour Baagii!
-At the application's starting page, the user is presented with a start button. When the user clicks the start button, the user is taken to a text input field and a "Search" button.
-When the user enters a city name in the text input field and click on the "Search button", cards for different attractions are appended to the page to the right of the search elements. A bird's eye view of one of the attractions via Bing maps are shown above the search elements. The user may click on the "map" button in the attraction cards to display a bird's eye view of the attraction via Bing maps.
+At the application's starting page, the user is presented with a start button. 
+When the user clicks the start button, the user is taken to a text input field and a "Search" button.
+When the user enters a city name in the text input field and click on the "Search button", cards for different attractions are appended to the page to the right of the search elements. 
+A bird's eye view of one of the attractions via Bing maps are shown above the search elements. The user may click on the "map" button in the attraction cards to display a bird's eye view of the attraction via Bing maps.
 When the user clicks the "+" button displayed on the attraction cards, the attraction is saved into the user's local storage. The attraction is then appended to the left of the search elements as a card. These cards will be appended when the application is started.
 
 ## Screenshots
