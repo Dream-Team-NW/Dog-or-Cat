@@ -1,7 +1,7 @@
 :root {
     --bluegrey: #546E7A;
     --grey: #616161;
-    --purple: #9575CD;
+    --purple: #4cbbce;
     --pink: #F50057;
     --cyan: #18FFFF;
     --lime: #C6FF00;
@@ -154,8 +154,8 @@ header {
 }
 
 #error {
-    color: #ba3939;
-    background: #ffe0e0;
+    color: #0f0404;
+    background: #a70606;
     border: 1px solid #a33a3a;
     display: none;
 }
