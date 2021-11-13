@@ -208,10 +208,13 @@ footer {
     #myMap {
         height: 200px;
         top: 50%;
+        width: 93vw; 
+        height: 40vh;
     }
     #text {
         height:25px;
-        width: 300px;
+        width: 470px;
+
     }
     #get-info {
         height: 35px;
