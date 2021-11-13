@@ -6,11 +6,11 @@ inputEl.addEventListener('click', apiGet)
 var savedAttractionsEl = document.querySelector("#savedAttractions");
 var savedAttractionsXid = [];
 
+var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
+
 if (JSON.parse(localStorage.getItem('savedXID')) !== null) {
   savedAttractionsXid = JSON.parse(localStorage.getItem("savedXID"));
 };
-
-var opentripKey = "5ae2e3f221c38a28845f05b665a04027d1a5333435e976ca3f86c960";
 
 document.getElementById("start").addEventListener("click", function(event){
   event.preventDefault();
@@ -125,6 +125,7 @@ function getAttraction(long, lat) {
 function bingSearch(long, lat){
   var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
 
+
     mapTypeId: Microsoft.Maps.MapTypeId.road,
     zoom: 15,
     center: new Microsoft.Maps.Location(lat, long)
@@ -143,7 +144,7 @@ function showSavedAttraction() {
       console.log(data);
       // append card
         var attractionCard = document.createElement("div");
-        attractionCard.className += "card col darken-1";
+        attractionCard.className += "card col darken-1 card-panel hoverable";
         attractionCard.setAttribute("style", "border-radius: 20px;")
         savedEl.appendChild(attractionCard);
         // append name
@@ -153,10 +154,14 @@ function showSavedAttraction() {
         attractionCard.appendChild(attractionCardName);
         // append description
         var attractionCardDescription = document.createElement("div");
+
+        attractionCardDescription.className = ("savedinfo-style")
+
         attractionCardDescription.textContent = data.wikipedia_extracts.text;
         attractionCard.appendChild(attractionCardDescription);
         // append button to map attraction
         var attractionCardButtonMap = document.createElement("button");
+        attractionCardButtonMap.id = ("savedattr-map-btn")
         attractionCardButtonMap.className += "waves-effect waves-light btn";
         attractionCardButtonMap.innerHTML = "Map " + data.name;
         attractionCard.appendChild(attractionCardButtonMap);
