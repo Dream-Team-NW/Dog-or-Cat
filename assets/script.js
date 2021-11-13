@@ -127,7 +127,7 @@ function bingSearch(long, lat){
   var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
 
         mapTypeId: Microsoft.Maps.MapTypeId.road,
-        zoom: 25,
+        zoom: 15,
         center: new Microsoft.Maps.Location(lat, long)
       });
       map.setView({ mapTypeId: Microsoft.Maps.MapTypeId.birdseye 
